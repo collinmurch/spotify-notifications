@@ -18,18 +18,18 @@ notify () {
 
 while [ true ]; do
 
-#Grab current song and artist
-song=`osascript -e "tell application \"Spotify\" to name of current track as string"`;
-artist=`osascript -e "tell application \"Spotify\" to artist of current track as string"`;
+	#Grab current song and artist
+	song=`osascript -e "tell application \"Spotify\" to name of current track as string"`;
+	artist=`osascript -e "tell application \"Spotify\" to artist of current track as string"`;
 
-#Notify if song is new
-if [ "$song" != "$tempsong" ]; then
-	tempsong=$song;
-	notify;
-fi 
+	#Notify if song is new
+	if [ "$song" != "$tempsong" ]; then
+		tempsong=$song;
+		notify;
+	fi 
 
-#Check every second
-sleep 1;
+	#Check every second
+	sleep 1;
 done;
 
 
