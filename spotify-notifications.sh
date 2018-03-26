@@ -8,7 +8,7 @@ notify () {
 	#Grab artwork and save to /tmp/icon.icns
 	id=`osascript -e "tell application \"Spotify\" to id of current track as string"`;
 	url="$(curl -sX GET https://embed.spotify.com/oembed\?url\=$id | cut -d '"' -f 24)";
-	eval $"curl -so /tmp/icon.icns $url";
+	eval $"curl -o /tmp/icon.icns $url";
 
 	eval $"osascript -e 'display dialog \""$song"\" with title \""$artist"\" with icon alias \"Macintosh HD:tmp:icon.icns\"'"
 	
