@@ -31,5 +31,3 @@ while [ true ]; do
 	#Check every second
 	sleep 1;
 done;
-
-
